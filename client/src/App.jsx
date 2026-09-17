@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 const API_URL = `${import.meta.env.VITE_API_URL || '/api'}/events`;
+const STATIC_EVENTS_URL = `${import.meta.env.BASE_URL}events.json`;
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -35,10 +36,28 @@ function App() {
       if (status === 'completed') params.append('status', 'completed');
 
       const response = await fetch(`${API_URL}?${params.toString()}`);
+      if (!response.ok) throw new Error('API unavailable');
       const data = await response.json();
       setEvents(data);
     } catch (error) {
-      console.error('Failed to load events:', error);
+      try {
+        const response = await fetch(STATIC_EVENTS_URL);
+        const staticEvents = await response.json();
+        const query = search.toLowerCase();
+        const filteredEvents = staticEvents.filter((eventItem) => {
+          const matchesCity = !city || eventItem.city.toLowerCase().includes(city.toLowerCase());
+          const matchesCategory = category === 'All' || eventItem.category === category;
+          const matchesSearch = !query || [eventItem.title, eventItem.description, eventItem.city, eventItem.venue, eventItem.address]
+            .join(' ')
+            .toLowerCase()
+            .includes(query);
+          return matchesCity && matchesCategory && matchesSearch;
+        });
+        setEvents(status === 'completed' ? [] : filteredEvents);
+      } catch (fallbackError) {
+        console.error('Failed to load events:', fallbackError);
+        setEvents([]);
+      }
     } finally {
       setLoading(false);
     }
