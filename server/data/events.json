@@ -1,0 +1,62 @@
+[
+  {
+    "id": "638393ed-cb81-4085-80e1-470ddc3971f2",
+    "title": "Chennai Marina Sunset Festival",
+    "description": "A vibrant evening of live music, local food stalls, and coastal performances along the Marina promenade.",
+    "category": "Concert",
+    "city": "Chennai",
+    "date": "2026-10-15",
+    "venue": "Marina Beach Front",
+    "address": "Kamarajar Promenade, Marina Beach, Chennai, Tamil Nadu 600005",
+    "latitude": 13.05,
+    "longitude": 80.2824,
+    "image": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&q=80",
+    "price": 699,
+    "organizer": "Coastal Beats Co."
+  },
+  {
+    "id": "b0ff607d-3c02-49e3-8d61-b860471f4eb0",
+    "title": "Madurai Heritage Market",
+    "description": "A colorful local market filled with handcrafted treasures, temple sweets, and traditional art.",
+    "category": "Market",
+    "city": "Madurai",
+    "date": "2026-10-12",
+    "venue": "Meenakshi Market Square",
+    "address": "East Chitrai Street, Madurai, Tamil Nadu 625001",
+    "latitude": 9.9195,
+    "longitude": 78.1193,
+    "image": "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1200&q=80",
+    "price": 0,
+    "organizer": "Madurai Makers Guild"
+  },
+  {
+    "id": "db75892d-09e1-4ea1-89b0-fe39acd9d818",
+    "title": "Kumbakonam Wellness Retreat",
+    "description": "A peaceful yoga and meditation morning inspired by traditional wellness practices and local herbs.",
+    "category": "Workshop",
+    "city": "Kumbakonam",
+    "date": "2026-10-18",
+    "venue": "The River Courtyard",
+    "address": "Mahamaham Tank Road, Kumbakonam, Tamil Nadu 612001",
+    "latitude": 10.9617,
+    "longitude": 79.3881,
+    "image": "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
+    "price": 1499,
+    "organizer": "Sattva Collective"
+  },
+  {
+    "id": "ef6516bd-ecd9-46ca-9e97-3bc27ea2275e",
+    "title": "Tirunelveli Football Derby",
+    "description": "An energetic community football tournament bringing neighborhoods together in a friendly match.",
+    "category": "Sports",
+    "city": "Tirunelveli",
+    "date": "2026-10-20",
+    "venue": "City Arena Grounds",
+    "address": "Palayamkottai Main Road, Tirunelveli, Tamil Nadu 627002",
+    "latitude": 8.7139,
+    "longitude": 77.7567,
+    "image": "https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=1200&q=80",
+    "price": 399,
+    "organizer": "South City League"
+  }
+]

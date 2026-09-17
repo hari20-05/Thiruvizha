@@ -1,0 +1,237 @@
+{
+  "info": {
+    "name": "Event Finder API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "API collection for the Community Event Finder app."
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Events",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "events"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Completed Events",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/events?status=completed",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "events"],
+          "query": [{"key": "status", "value": "completed"}]
+        }
+      }
+    },
+    {
+      "name": "Get Events by City",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/events?city=New York",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "events"
+          ],
+          "query": [
+            {
+              "key": "city",
+              "value": "New York"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Events by Category",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/events?category=Workshop",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "events"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "Workshop"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search Events",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/events?search=music",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "events"
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "music"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Event",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Tech Meetup\",\n  \"description\": \"A community networking event for developers and startup founders.\",\n  \"category\": \"Workshop\",\n  \"city\": \"Boston\",\n  \"date\": \"2026-11-02\",\n  \"venue\": \"Innovation Hub\",\n  \"address\": \"100 Main Street, Boston, MA\",\n  \"latitude\": 42.3601,\n  \"longitude\": -71.0589,\n  \"image\": \"https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80\",\n  \"price\": 20,\n  \"organizer\": \"BuildTogether\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "events"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Single Event",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/events/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "events",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Event",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Tech Meetup Updated\",\n  \"description\": \"Updated networking event information for the developer community.\",\n  \"category\": \"Workshop\",\n  \"city\": \"Boston\",\n  \"date\": \"2026-11-05\",\n  \"venue\": \"Innovation Hub\",\n  \"address\": \"100 Main Street, Boston, MA\",\n  \"latitude\": 42.3601,\n  \"longitude\": -71.0589,\n  \"image\": \"https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80\",\n  \"price\": 25,\n  \"organizer\": \"BuildTogether\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/events/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "events",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Event",
+      "request": {
+        "method": "DELETE",
+        "header": [{
+          "key": "x-organizer",
+          "value": "BuildTogether"
+        }],
+        "url": {
+          "raw": "http://localhost:5000/api/events/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "events",
+            "1"
+          ]
+        }
+      }
+    }
+  ]
+}

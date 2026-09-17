@@ -1,0 +1,13 @@
+{
+  "name": "event-finder-app",
+  "private": true,
+  "scripts": {
+    "install:server": "npm install --prefix server",
+    "install:client": "npm install --prefix client",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "start:server": "npm --prefix server start",
+    "start:client": "npm --prefix client run preview -- --host 0.0.0.0"
+  }
+}
